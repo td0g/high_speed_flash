@@ -34,8 +34,8 @@ public:
   //! data pins.
   //!
   //! @param pinClk - The number of the digital pin connected to the clock pin of the module
-  //! @param pinDIO - The number of the digital pin connected to the DIO pin of the module
-  TM1637Display(uint8_t pinClk, uint8_t pinDIO);
+  //! @param pinDISPLAY_DIO_PIN - The number of the digital pin connected to the DISPLAY_DIO_PIN pin of the module
+  TM1637Display(uint8_t pinClk, uint8_t pinDISPLAY_DIO_PIN);
 
   //! Sets the brightness of the display.
   //!
@@ -137,7 +137,7 @@ protected:
 
 private:
 	uint8_t m_pinClk;
-	uint8_t m_pinDIO;
+	uint8_t m_pinDISPLAY_DIO_PIN;
 	uint8_t m_brightness;
 	uint8_t m_inverted;
  uint8_t m_lastBytes[4];

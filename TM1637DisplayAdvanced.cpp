@@ -57,18 +57,18 @@ const uint8_t digitToSegment[] = {
   };
 
 
-TM1637Display::TM1637Display(uint8_t pinClk, uint8_t pinDIO)
+TM1637Display::TM1637Display(uint8_t pinClk, uint8_t pinDISPLAY_DIO_PIN)
 {
 	// Copy the pin numbers
 	m_pinClk = pinClk;
-	m_pinDIO = pinDIO;
+	m_pinDISPLAY_DIO_PIN = pinDISPLAY_DIO_PIN;
 
 	// Set the pin direction and default value.
 	// Both pins are set as inputs, allowing the pull-up resistors to pull them up
     pinMode(m_pinClk, INPUT);
-    pinMode(m_pinDIO,INPUT);
+    pinMode(m_pinDISPLAY_DIO_PIN,INPUT);
 	digitalWrite(m_pinClk, LOW);
-	digitalWrite(m_pinDIO, LOW);
+	digitalWrite(m_pinDISPLAY_DIO_PIN, LOW);
 }
 
 
@@ -206,17 +206,17 @@ void TM1637Display::bitDelay()
 
 void TM1637Display::start()
 {
-  pinMode(m_pinDIO, OUTPUT);
+  pinMode(m_pinDISPLAY_DIO_PIN, OUTPUT);
   bitDelay();
 }
 
 void TM1637Display::stop()
 {
-	pinMode(m_pinDIO, OUTPUT);
+	pinMode(m_pinDISPLAY_DIO_PIN, OUTPUT);
 	bitDelay();
 	pinMode(m_pinClk, INPUT);
 	bitDelay();
-	pinMode(m_pinDIO, INPUT);
+	pinMode(m_pinDISPLAY_DIO_PIN, INPUT);
 	bitDelay();
 }
 
@@ -228,36 +228,36 @@ bool TM1637Display::writeByte(uint8_t b, bool inverted)
 
   // 8 Data Bits
   for(uint8_t i = 0; i < 8; i++) {
-    // CLK low
+    // DISPLAY_CLK_PIN low
     pinMode(m_pinClk, OUTPUT);
     bitDelay();
 
 	// Set data bit
     if (data & 0x01)
-      pinMode(m_pinDIO, INPUT);
+      pinMode(m_pinDISPLAY_DIO_PIN, INPUT);
     else
-      pinMode(m_pinDIO, OUTPUT);
+      pinMode(m_pinDISPLAY_DIO_PIN, OUTPUT);
 
     bitDelay();
 
-	// CLK high
+	// DISPLAY_CLK_PIN high
     pinMode(m_pinClk, INPUT);
     bitDelay();
     data = data >> 1;
   }
 
   // Wait for acknowledge
-  // CLK to zero
+  // DISPLAY_CLK_PIN to zero
   pinMode(m_pinClk, OUTPUT);
-  pinMode(m_pinDIO, INPUT);
+  pinMode(m_pinDISPLAY_DIO_PIN, INPUT);
   bitDelay();
 
-  // CLK to high
+  // DISPLAY_CLK_PIN to high
   pinMode(m_pinClk, INPUT);
   bitDelay();
-  uint8_t ack = digitalRead(m_pinDIO);
+  uint8_t ack = digitalRead(m_pinDISPLAY_DIO_PIN);
   if (ack == 0)
-    pinMode(m_pinDIO, OUTPUT);
+    pinMode(m_pinDISPLAY_DIO_PIN, OUTPUT);
 
 
   bitDelay();
@@ -276,4 +276,3 @@ void TM1637Display::writeAddress(uint8_t addr){
   start();
   writeByte(TM1637_I2C_COMM2 + (addr & 0x03));
 }
-
