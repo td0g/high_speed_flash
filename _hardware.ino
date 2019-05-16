@@ -2,7 +2,12 @@ void forceFlash(){
   switch (menuPosition){
   case 0:
       FLASH_ON;
-      DELAY_500_NS;
+      NOP;
+      FLASH_OFF;
+  break;
+  case 1:
+      FLASH_ON;
+      NOP; NOP; NOP; NOP; NOP; 
       FLASH_OFF;
   break;
   case 2:
@@ -10,7 +15,7 @@ void forceFlash(){
       DELAY_500_NS;
       DELAY_500_NS;
       DELAY_500_NS;
-      DELAY_500_NS;
+      NOP; NOP; NOP;
       FLASH_OFF;
   break;
   case 3:
@@ -22,20 +27,15 @@ void forceFlash(){
       DELAY_500_NS;
       DELAY_500_NS;
       DELAY_500_NS;
-      DELAY_500_NS;
+      NOP;
       FLASH_OFF;
   break;
     default:
-      FLASH_ON;
-      DELAY_500_NS;
-      DELAY_500_NS;
-      FLASH_OFF;
     break;
   }
   FLASH_OFF;
   delay(50);
-  nextVolt = 0;
-  for (byte i = 0; i < 4; i++) nextVolt += analogRead(HIGH_VOLT_OUT_ANALOG);
+  nextVolt = analogRead(HIGH_VOLT_OUT_ANALOG);
 }
 
 
@@ -43,22 +43,28 @@ void runFlash(){
   display.setSegments(nothing);
   switch (menuPosition){
   case 0:
-    while ((TRIGGER_HIGH) && BUTTON_NOT_PRESSED){};
+    while (TRIGGER_HIGH_BUTTON_NOT_PRESSED){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
-      DELAY_500_NS;
+      NOP;
+      FLASH_OFF;
+  break;
+  case 1:
+    while (TRIGGER_HIGH_BUTTON_NOT_PRESSED){};
+      if (BUTTON_NOT_PRESSED) FLASH_ON;
+      NOP; NOP; NOP; NOP; NOP; 
       FLASH_OFF;
   break;
   case 2:
-    while ((TRIGGER_HIGH) && BUTTON_NOT_PRESSED){};
+    while (TRIGGER_HIGH_BUTTON_NOT_PRESSED){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_500_NS;
       DELAY_500_NS;
       DELAY_500_NS;
-      DELAY_500_NS;
+      NOP; NOP; NOP;
       FLASH_OFF;
   break;
   case 3:
-    while ((TRIGGER_HIGH) && BUTTON_NOT_PRESSED){};
+    while (TRIGGER_HIGH_BUTTON_NOT_PRESSED){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_500_NS;
       DELAY_500_NS;
@@ -67,21 +73,15 @@ void runFlash(){
       DELAY_500_NS;
       DELAY_500_NS;
       DELAY_500_NS;
-      DELAY_500_NS;
+      NOP;
       FLASH_OFF;
   break;
   default:
-    while ((TRIGGER_HIGH) && BUTTON_NOT_PRESSED){};
-      if (BUTTON_NOT_PRESSED) FLASH_ON;
-      DELAY_500_NS;
-      DELAY_500_NS;
-      FLASH_OFF;
      break;
   }
   FLASH_OFF;
   delay(50);
-  nextVolt = 0;
-  for (byte i = 0; i < 4; i++) nextVolt += analogRead(HIGH_VOLT_OUT_ANALOG);
+  nextVolt = analogRead(HIGH_VOLT_OUT_ANALOG);
 }
 
 
@@ -89,19 +89,19 @@ void runFlash(){
 void chargeFlash(){
   byte i = 10;
   unsigned long _t;
-  display.clearSegmentState();
+  display.clearLineState();
   display.showNumberDec(analogRead(HIGH_VOLT_OUT_ANALOG) * 4 / 9);
   delay(250);
   highVolt = 0;
   HIGH_VOLT_ON;
   _t = millis() + 500;
-  while (millis() < _t) display.showNumberDec(analogRead(HIGH_VOLT_OUT_ANALOG) * 4 / 9);
+  while (millis() < _t) display.showNumberDec(analogRead(HIGH_VOLT_OUT_ANALOG)/ 8);
   while (i && analogRead(HIGH_VOLT_OUT_ANALOG) > highVolt + 1){
     readBtn();
     i--;
     highVolt = analogRead(HIGH_VOLT_OUT_ANALOG);
     _t = millis() + 500;
-    while (millis() < _t || BUTTON_PRESSED) display.showNumberDec(analogRead(HIGH_VOLT_OUT_ANALOG) * 4 / 9);
+    while (millis() < _t || BUTTON_PRESSED) display.showNumberDec(analogRead(HIGH_VOLT_OUT_ANALOG) / 8);
   }
 }
 

@@ -15,35 +15,35 @@ void runUI(){
         forceFlash();
         HIGH_VOLT_OFF;     
         recordPerformance();
-        float _c;
-        _c = (4 * highVolt - nextVolt) / 9;
-        _c *= CAPACITANCE_UF;
-        _c *= 2;
-        byte x[4] = {1, 2, 4, 8};
-        _c /= x[menuPosition];
-        _c *= 100;
+          float _c;
+          _c = (nextVolt - highVolt) / 8;
+          _c *= CAPACITANCE_UF;
+          _c *= 2;
+          byte x[4] = {1, 2, 4, 8};
+          _c /= x[menuPosition];
+          _c *= 100;
+      
+          nextVolt *= 10000;
+          nextVolt /= highVolt;
         
-        nextVolt *= 2500;
-        nextVolt /= highVolt;
-        
-        display.setSegmentState(2, 0, 0b01111111);
-        display.setSegmentState(3, 0b01110011, 0b00001100);
+        display.forceLineState(2, 0, 0b01111111);
+        display.forceLineState(3, 0b01110011, 0b00001100);
         display.showNumberDec(nextVolt);
           unsigned long _t;
           _t = millis() + 1000;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
         display.setSegments(nothing);
-        display.clearSegmentState();
+        display.clearLineState();
           _t = millis() + 250;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
         nextVolt = _c;
-        display.setSegmentState(2, 0, 0b01111111);
-        display.setSegmentState(3, 0b01110111, 0b00001000);
+        display.forceLineState(2, 0, 0b01111111);
+        display.forceLineState(3, 0b01110111, 0b00001000);
         display.showNumberDec(nextVolt);
           _t = millis() + 1000;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
         display.setSegments(nothing);
-        display.clearSegmentState();
+        display.clearLineState();
           _t = millis() + 250;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
         REFRESH_DISPLAY;
@@ -57,34 +57,33 @@ void runUI(){
           _t = millis() + 3000;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
           float _c;
-          _c = (nextVolt - highVolt * 4) / 9;
+          _c = (nextVolt - highVolt) / 8;
           _c *= CAPACITANCE_UF;
           _c *= 2;
           byte x[4] = {1, 2, 4, 8};
           _c /= x[menuPosition];
           _c *= 100;
-          _c /= 9;
       
-          nextVolt *= 2500;
+          nextVolt *= 10000;
           nextVolt /= highVolt;
       
-          display.setSegmentState(2, 0, 0b01111111);
-          display.setSegmentState(3, 0b01110011, 0b00001100);
+          display.forceLineState(2, 0, 0b01111111);
+          display.forceLineState(3, 0b01110011, 0b00001100);
           display.showNumberDec(nextVolt);
           _t = millis() + 1000;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
           display.setSegments(nothing);
-          display.clearSegmentState();
+          display.clearLineState();
           _t = millis() + 250;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
           nextVolt = _c;
-          display.setSegmentState(2, 0, 0b01111111);
-          display.setSegmentState(3, 0b01110111, 0b00001000);
+          display.forceLineState(2, 0, 0b01111111);
+          display.forceLineState(3, 0b01110111, 0b00001000);
           display.showNumberDec(nextVolt);
           _t = millis() + 1000;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
           display.setSegments(nothing);
-          display.clearSegmentState();
+          display.clearLineState();
           _t = millis() + 250;
           while (millis() < _t && BUTTON_NOT_PRESSED){};
         }
@@ -125,7 +124,7 @@ void runDisplay(){
           byte txt4000[4] = {0b01100110, 0, 0b00111110, 0b00101101};
 
   if (_menuPosition != menuPosition) {
-      display.clearSegmentState();
+      display.clearLineState();
     _switch = 3;
     _timer = millis() - 1;
     menuPosition &= 0b01111111;
@@ -136,7 +135,7 @@ void runDisplay(){
     _switch = (_switch + 1) % 4;
     if (!_switch){
     _timer = millis() + 3000;
-      display.setSegmentState(3, 255, 255);
+      display.forceLineState(3, 255, 255);
       switch (menuPosition){
         case 0:
           display.setSegments(txt500);
@@ -154,11 +153,11 @@ void runDisplay(){
     }
     else if (_switch & 1){
       display.setSegments(nothing);
-      display.clearSegmentState();
+      display.clearLineState();
       _timer = millis() + 250;
     }
     else {
-      display.setSegmentState(3, 0b00011100, 0b11100011);
+      display.forceLineState(3, 0b00011100, 0b11100011);
     _timer = millis() + 1000;
       lowVolt += analogRead(INPUT_VOLT_ANALOG) * 20;
       lowVolt = lowVolt >> 1;

@@ -8,10 +8,10 @@ void recordPerformance(){
 
   if (e != -1) {
     EEPROM.write(e, menuPosition + 1);
-    EEPROM.write(e+1, (highVolt & 255));
-    EEPROM.write(e+2, ((highVolt >> 8) & 255));
-    EEPROM.write(e+3, (nextVolt & 255));
-    EEPROM.write(e+4, ((nextVolt >> 8) & 255));
+    EEPROM.write(e+1, (highVolt >> 8));
+    EEPROM.write(e+2, (highVolt & 255));
+    EEPROM.write(e+3, (nextVolt >> 8));
+    EEPROM.write(e+4, (nextVolt & 255));
   }
 }
 
@@ -35,23 +35,23 @@ void printHistory(){
     }
     Serial.println(" Flash");
     Serial.print(F("   Voltage: "));
-    unsigned int _t = EEPROM.read(e+2);
-    _t = _t << 8;
-    _t |= EEPROM.read(e+1);
-    _t *= 4;
-    _t /= 9;
+    unsigned int _t = EEPROM.read(e+1);
+    _t = EEPROM.read(e+1);
+    _t = _t <<8;
+    _t += EEPROM.read(e+2);
     float _c;
-    _c = _t;
+    _c = _t / 8;
+    _t = _c;
     Serial.print(_t);
     Serial.print(F(" -> "));
-    _t = EEPROM.read(e+4);
-    _t = _t << 8;
-    _t |= EEPROM.read(e+3);
-    _t /= 9;
-    _c -= _t;
+    _t = EEPROM.read(e+3);
+    _t = _t <<8;
+    _t += EEPROM.read(e+4);
+    _t /= 8;
     Serial.print(_t);
     Serial.print(F("   Current: "));
-    _c *= CAPACITANCE_UF;
+    _c = _c - float(_t / 8);
+    _c /= CAPACITANCE_UF;
     _c *= 2;
     byte x[4] = {1, 2, 4, 8};
     _c /= x[EEPROM.read(e)-1];

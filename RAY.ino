@@ -9,6 +9,19 @@
 CHANGELOG
 0.1 2019-04-27
   Functional
+  
+0.2 2019-05-05
+  Added EEPROM Data Logging
+  Displays Voltage Drop and Current after flash
+  Many bug fixes
+
+0.2.1 2019-05-10
+  Bug fixes
+  
+0.2.2  2019-05-15
+  Changed display library
+  Improved trigger response time slightly
+  
 */
 
 #define BUTTON_DEBOUNCE 150
@@ -29,6 +42,7 @@ CHANGELOG
 #define ENCODER_STATE ((PINC & 0b00100000) >> 5) | ((PIND & 0b00000100) >> 1)
 #define TRIGGER_PIN 17 //10
 #define TRIGGER_HIGH (PINC & 0b00001000)
+#define TRIGGER_HIGH_BUTTON_NOT_PRESSED (PINC & 0b00011000)
 
 #define HIGH_VOLT_PIN 5
 #define HIGH_VOLT_ON pinMode(HIGH_VOLT_PIN, OUTPUT);
@@ -47,8 +61,8 @@ CHANGELOG
 #define REFRESH_DISPLAY menuPosition = menuPosition | 0b10000000
 
 
-#include "TM1637DisplayAdvanced.h"
-TM1637Display display(DISPLAY_CLK_PIN, DISPLAY_DIO_PIN);
+#include "TD0G_1637.h"
+tm1637 display(DISPLAY_CLK_PIN, DISPLAY_DIO_PIN);
 
 #include <EEPROM.h>
 
@@ -85,7 +99,7 @@ void setup() {
 //Display
   display.setSegments(TXT_all);
   display.setBrightness(7);
-  display.setInverted(1);
+  display.flipDisplay(1);
   REFRESH_DISPLAY;
 
 //Serial
@@ -96,6 +110,5 @@ void setup() {
 void loop() {
   runDisplay();
   runUI();
-  runExternal();  //Upon recieving a 1ms low signal, charge flash and wait for next signal to fire
   runSerial();
 }
