@@ -1,13 +1,3 @@
-
-
-/*
-      a
-    f   b
-      g
-    e   c
-      d
-*/
-
 #include "TD0G_1637.h"
 #include <Arduino.h>
 
@@ -25,6 +15,77 @@ tm1637::tm1637(uint8_t _clkPin, uint8_t _dioPin)
 	dioPin = _dioPin;
 }
 
+void tm1637::printInt(int num, uint8_t style, uint8_t length, uint8_t pos)
+{
+  uint8_t digits[4];
+  const static int E[] = {1, 10, 100, 1000};
+  uint8_t lead = 1;
+
+  for(int8_t k = 0; k < 4; k++) {
+    int divisor = E[3 - k];
+    int d = num / divisor;
+      uint8_t digit = 0;
+    if (!d) {
+      if (style || (k == 3))
+          digit = numberSegment[d];
+        else digit = 0;
+    }
+    else {
+      digit = numberSegment[d];
+      num -= d * divisor;
+      lead = 0;
+    }
+    digits[k] = digit;
+  }
+
+  setSegments(digits + (4 - length), length, pos);
+}
+
+void tm1637::setSegments(const uint8_t _segments[], uint8_t _length, uint8_t _pos)
+{
+  _length--;
+  
+  beginTransfer();
+  sendByte(COM1);
+  endTransfer();
+
+  if (!flipped) writeAddress(_pos);
+  else writeAddress(3 - _pos - _length);
+  
+  for (uint8_t k=0; k <= _length; k++)
+  {
+    lastBytes[k + _pos] = _segments[k];     //Save byte in case refresh is called
+    if (!flipped) sendByte((_segments[k] & linesForcedLow[k]) | linesForcedHigh[k] | colonMask);
+    else sendByte((_segments[_length - k] & linesForcedLow[_length - k]) | linesForcedHigh[_length - k] | colonMask, 1);    //NEW 1
+  }
+
+  endTransfer();
+}
+
+void tm1637:: colon(uint8_t _c){
+  if (!_c && colonMask){
+    colonMask = 0;
+    refresh(2);
+  }
+  if (_c && !colonMask) {
+    colonMask = 0b10000000;
+    refresh(2);
+  }
+}
+
+void tm1637::setBrightness(uint8_t _b, uint8_t _on)
+{
+  brightness = (_b & 0b00000111) | ((_on & 1) << 3);
+  beginTransfer();
+  sendByte(COM3 + (brightness & 0b00001111));
+  endTransfer();
+}
+
+void tm1637::flipDisplay(uint8_t _inv){
+  if (_inv) _inv = 1;
+  flipped = _inv;
+}
+
 void tm1637::forceLineState(uint8_t _digit, uint8_t _high, uint8_t _low){
   if (_high != 255) linesForcedHigh[_digit] = _high;
   if (_low != 255) linesForcedLow[_digit] = 127 - _low;
@@ -37,22 +98,6 @@ void tm1637::clearLineState(){
   }
 }
 
-void tm1637::flipDisplay(uint8_t _inv){
-  if (_inv) _inv = 1;
-  flipped = _inv;
-  refresh();
-}
-
-void tm1637::setBrightness(uint8_t _b, uint8_t _on)
-{
-	brightness = (_b & 0b00000111) | ((_on & 1) << 3);
-  beginTransfer();
-  sendByte(COM3 + (brightness & 0b00001111));
-  endTransfer();
-}
-
-
-
 void tm1637::refresh(uint8_t _pos)
 {
   if (_pos == 4) setSegments(lastBytes);
@@ -64,75 +109,11 @@ void tm1637::refresh(uint8_t _pos)
     if (flipped) writeAddress(3 - _pos);
     else writeAddress(_pos);
     
-    if (!flipped) sendByte((lastBytes[_pos] & linesForcedLow[_pos]) | linesForcedHigh[_pos]);
-    else sendByte((lastBytes[_pos] & linesForcedLow[_pos]) | linesForcedHigh[_pos], 1);
+    if (!flipped) sendByte((lastBytes[_pos] & linesForcedLow[_pos]) | linesForcedHigh[_pos] | colonMask);
+    else sendByte((lastBytes[_pos] & linesForcedLow[_pos]) | linesForcedHigh[_pos] | colonMask, 1);
 
   }
   endTransfer();
-}
-
-
-
-void tm1637::setSegments(const uint8_t _segments[], uint8_t _length, uint8_t _pos)
-{
-  _length--;
-  
-	beginTransfer();
-	sendByte(COM1);
-	endTransfer();
-
-	if (!flipped) writeAddress(_pos);
-  else writeAddress(3 - _pos - _length);
-  
-	for (uint8_t k=0; k <= _length; k++)
-  {
-    lastBytes[k + _pos] = _segments[k];     //Save byte in case refresh is called
-	  if (!flipped) sendByte((_segments[k] & linesForcedLow[k]) | linesForcedHigh[k]);
-    else sendByte((_segments[_length - k] & linesForcedLow[_length - k]) | linesForcedHigh[_length - k], 1);    //NEW 1
-  }
-
-	endTransfer();
-}
-
-
-
-void tm1637::showNumberDec(int num, bool leading_zero, uint8_t length, uint8_t pos)
-{
-  showNumberDecEx(num, 0, leading_zero, length, pos);
-}
-
-void tm1637::showNumberDecEx(int num, uint8_t dots, bool leading_zero,
-                                    uint8_t length, uint8_t pos)
-{
-  uint8_t digits[4];
-	const static int divisors[] = { 1, 10, 100, 1000 };
-	bool leading = true;
-
-	for(int8_t k = 0; k < 4; k++) {
-	  int divisor = divisors[3 - k];
-		int d = num / divisor;
-    uint8_t digit = 0;
-
-		if (d == 0) {
-		  if (leading_zero || !leading || (k == 3))
-		      digit = numberSegment[d];
-	      else
-		      digit = 0;
-		}
-		else {
-			digit = numberSegment[d];
-			num -= d * divisor;
-			leading = false;
-		}
-    
-    // Add the decimal point/colon to the digit
-    digit |= (dots & 0x80); 
-    dots <<= 1;
-    
-    digits[k] = digit;
-	}
-
-	setSegments(digits + (4 - length), length, pos);
 }
 
 void tm1637::beginTransfer()
@@ -151,10 +132,15 @@ void tm1637::endTransfer()
 	WAIT;
 }
 
+void tm1637::writeAddress(uint8_t _addr){
+  beginTransfer();
+  sendByte(COM2 + (_addr & 0x03));
+}
+
 uint8_t tm1637::sendByte(uint8_t b, bool inverted)
 {
   uint8_t data;
-  if (inverted) {data = (b & 0b01000000); data += (b & 0b00000111) << 3; data += (b & 0b00111000) >> 3;}
+  if (inverted) {data = (b & 0b11000000); data += (b & 0b00000111) << 3; data += (b & 0b00111000) >> 3;}
   else data = b;
 
   for(uint8_t i = 0; i < 8; i++) {
@@ -171,23 +157,14 @@ uint8_t tm1637::sendByte(uint8_t b, bool inverted)
   pinMode(clkPin, OUTPUT);
   pinMode(dioPin, INPUT);
   WAIT;
-
-  // DISPLAY_CLK_PIN to high
   pinMode(clkPin, INPUT);
   WAIT;
   uint8_t reply = digitalRead(dioPin);
   if (reply == 0) pinMode(dioPin, OUTPUT);
-
 
   WAIT;
   pinMode(clkPin, OUTPUT);
   WAIT;
 
   return reply;
-}
-
-
-void tm1637::writeAddress(uint8_t _addr){
-  beginTransfer();
-  sendByte(COM2 + (_addr & 0x03));
 }
