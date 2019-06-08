@@ -1,7 +1,7 @@
 # high_speed_flash
-Firmware for a high-speed LED flash.
+Edgerton is a high-speed flash used for photographing bullets or other projectiles.  The project is open-source.
 
-## Description
+## Firmware Description
 
 This is the firmware for Edgerton, a home-built high-speed LED flash.  The firmware runs on an ATMega328P microcontroller.  Schematics will be made available soon.
 
