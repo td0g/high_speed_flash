@@ -1,3 +1,23 @@
+/*
+  TM1637 display library for Arduino
+  Written by Tyler Gerritsen
+  vtgerritsen@gmail.com
+  www.td0g.ca
+ 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "TD0G_1637.h"
 #include <Arduino.h>
 
@@ -24,13 +44,14 @@ void tm1637::printInt(int num, uint8_t style, uint8_t length, uint8_t pos)
   for(int8_t k = 0; k < 4; k++) {
     int divisor = E[3 - k];
     int d = num / divisor;
-      uint8_t digit = 0;
+    uint8_t digit = 0;
     if (!d) {
       if (style || (k == 3))
-          digit = numberSegment[d];
-        else digit = 0;
+        digit = numberSegment[d];
+      else digit = 0;
     }
     else {
+      style = 1;
       digit = numberSegment[d];
       num -= d * divisor;
       lead = 0;

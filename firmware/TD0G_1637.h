@@ -1,15 +1,35 @@
+/*
+  TM1637 display library for Arduino
+  Written by Tyler Gerritsen
+  vtgerritsen@gmail.com
+  www.td0g.ca
+ 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef __TD0G_1637__
 #define __TD0G_1637__
 
 #include <inttypes.h>
 
-#define SEG_A   0b00000001
-#define SEG_B   0b00000010
-#define SEG_C   0b00000100
-#define SEG_D   0b00001000
-#define SEG_E   0b00010000
-#define SEG_F   0b00100000
-#define SEG_G   0b01000000
+#define SEG_A  0b00000001
+#define SEG_B  0b00000010
+#define SEG_C  0b00000100
+#define SEG_D  0b00001000
+#define SEG_E  0b00010000
+#define SEG_F  0b00100000
+#define SEG_G  0b01000000
 #define RIGHT_JUSTIFY 0
 
 /*
