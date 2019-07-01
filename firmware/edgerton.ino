@@ -40,6 +40,12 @@ CHANGELOG
   Added colon control to TM1637 code
   Removed high-voltage input sensor
   General code hygiene improvements
+
+0.2.4  2019-06-28
+  Trigger now automatically detects active low/high, will activate on signal change
+  Chirp indicates trigger state change when not in standby mode
+  Improved delay precision
+  
   
 */
 
@@ -76,6 +82,7 @@ CHANGELOG
   #define TRIGGER_HIGH (PINC & 0b00001000)
   #define TRIGGER_HIGH_BUTTON_NOT_PRESSED (PINC & 0b00011000)
   #define TRIGGER_LOW (!(PINC & 0b00001000))
+  #define TRIGGER_LOW_BUTTON_NOT_PRESSED (!(PINC & 0b00001000) && (PINC & 0b00010000))
   #define HIGH_VOLT_PIN 5
   #define HIGH_VOLT_ON digitalWrite(HIGH_VOLT_PIN, 1);
   #define HIGH_VOLT_OFF digitalWrite(HIGH_VOLT_PIN, 0);
@@ -116,7 +123,7 @@ CHANGELOG
   const byte trigPin = TRIGGER_PIN;
   const byte relayPin = HIGH_VOLT_PIN;
 
-  unsigned int flashDelay = 0;
+  unsigned long flashDelay = 0;
   byte menuPosition = 0;
   byte flashDuration = 1;
   unsigned long highVolt;
@@ -176,4 +183,5 @@ void loop() {
   runDisplay();
   runUI();
   runSerial();
+  runAudio();
 }

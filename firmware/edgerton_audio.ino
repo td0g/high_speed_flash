@@ -1,3 +1,17 @@
+void runAudio(){
+  static unsigned long _timer;
+  static byte _triggerState = TRIGGER_HIGH;
+  if (TRIGGER_HIGH != _triggerState){
+    _timer = millis() + 100;
+    _triggerState = TRIGGER_HIGH;
+  }
+  if (_timer && millis() > _timer){
+    if (_triggerState) soundUp();
+    else soundDown();
+    _timer = 0;
+  }
+}
+
 void soundStartup(){
   #ifdef SOUND
     tone(SOUND_PIN, TONE_A, 20);
@@ -7,6 +21,18 @@ void soundStartup(){
     tone(SOUND_PIN, TONE_E, 20);
     delay(30);
     tone(SOUND_PIN, TONE_C_S, 20);
+  #endif
+}
+
+void soundUp(){
+  #ifdef SOUND
+    tone(SOUND_PIN, TONE_G, 100);
+  #endif
+}
+
+void soundDown(){
+  #ifdef SOUND
+    tone(SOUND_PIN, TONE_A, 100);
   #endif
 }
 

@@ -9,23 +9,23 @@ void runUI(){
       else if (_e == -1 && flashDuration){flashDuration--; soundTick(); REFRESH_DISPLAY;}
     break;
     case 1:
-      if (_e == 1 && flashDelay < 9000){
-        if (flashDelay < 100) flashDelay++; 
-        else if (flashDelay < 200) flashDelay += 2;
-        else if (flashDelay < 500) flashDelay += 5;
-        else if (flashDelay < 1000) flashDelay += 10;
-        else if (flashDelay < 2000) flashDelay += 20;
-        else flashDelay += 50;
+      if (_e == 1 && flashDelay < 9000000){
+        if (flashDelay < 1000) flashDelay += 50; 
+        else if (flashDelay < 2000) flashDelay += 100;
+        else if (flashDelay < 5000) flashDelay += 500;
+        else if (flashDelay < 10000) flashDelay += 1000;
+        else if (flashDelay < 20000) flashDelay += 2000;
+        else if (flashDelay < 50000) flashDelay += 5000;
+        else flashDelay += 10000;
         soundTick(); 
         REFRESH_DISPLAY;
       }
       else if (_e == -1 && flashDelay){
-        if (flashDelay < 101) flashDelay--; 
-        else if (flashDelay < 201) flashDelay -= 2;
-        else if (flashDelay < 501) flashDelay -= 5;
-        else if (flashDelay < 1001) flashDelay -= 10;
-        else if (flashDelay < 2001) flashDelay -= 20;
-        else flashDelay -= 50;
+        if (flashDelay < 1001) flashDelay -= 50; 
+        else if (flashDelay < 2001) flashDelay -= 100;
+        else if (flashDelay < 10001) flashDelay -= 1000;
+        else if (flashDelay < 20001) flashDelay -= 2000;
+        else flashDelay -= 5000;
         soundTick(); 
         REFRESH_DISPLAY;
       }
@@ -79,7 +79,14 @@ void runDisplay(){
           else if (flashDuration == 3) display.setSegments(txt4000);
         break;
         case 1:
-          display.printInt(flashDelay);
+          if (flashDelay > 9000) {
+            display.colon(0);
+            display.printInt(flashDelay / 1000);
+          }
+          else {
+            display.colon(1);
+            display.printInt(flashDelay / 10);
+          }
         break;
         case 2:
         break;
