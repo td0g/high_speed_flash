@@ -1,0 +1,25 @@
+Goal:
+	Test high-pass filter
+	Test trigger reponse time for RISING and FALLING signals
+
+Equipment: 
+	BK Precision Oscilloscope
+	Control boards x2 (S/N 002 & 003)
+	
+Setup:
+	Upload modified firmware (4uS pulse will trigger gate for 1,000 uS)
+	Connect scope channel 1 to Gate output, channel 2 to Trigger input
+	Arm scope
+	Perform 2x falling edge triggers by closing switch between trigger input and ground
+		(microcontroller set to 1,000uS pulse output in order to test high-pass filter)
+	Perform 2x rising edge triggers by opening switch between trigger input and ground
+		(microcontroller set to 1,000uS pulse output in order to test high-pass filter)
+	
+Results:
+	Falling-edge trigger delay is about 1 microsecond
+	Rising-edge trigger delay is <20 microseconds
+	High-pass filter is well-tuned, about 4.5 uS
+	
+Comments:
+	Results are satisfactory
+	Falling-edge triggers are preferred, perhaps look into improvements to rising edge triggering
