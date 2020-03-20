@@ -4,7 +4,7 @@ Edgerton is a high-speed flash used for photographing bullets or other projectil
 ## Building Your Flash
 Please download and follow the Assembly Manual.  This detailed manual should answer most of your questions.
 
-The main control board can be built in several ways.  You may build it using a blank perfboard PCB (See the perfboard layout), by etching and drilling your own PCB (See the Gerber files), or by purchasing a control board from me (Coming soon!).
+The main control board can be built in several ways.  You may build it using a blank perfboard PCB (See the perfboard layout), by etching and drilling your own PCB (See the Gerber files), or by purchasing a control board from me (https://www.tindie.com/products/19592/).
 
 The firmware has been tested and will make setup quick and easy.  Please flash it to your microcontroller using the Arduino IDE.  Before turning on your flash, please review the User's Manual.
 
