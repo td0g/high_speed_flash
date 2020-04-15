@@ -3,7 +3,7 @@ Goal:
 	These traces were acquired during the QA process
 
 Equipment: 
-	BK Precision Oscilloscope
+	Siglent SDS1202X-E Oscilloscope
 	EMCB0 rev1.2c Control boards x5
 	
 Setup:
