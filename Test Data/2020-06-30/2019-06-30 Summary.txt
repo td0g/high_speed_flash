@@ -1,0 +1,20 @@
+Goal:
+	Test new 'Tripwire' trigger system
+	This new system makes high-speed bullet photography possible if you don't have a ballistic chronograph or other fancy trigger
+
+Equipment: 
+	0.177 pellet rifle
+	Edgerton MK1
+	Tripwire Trigger
+	
+Setup:
+	Connect Edgerton to Tripwire trigger
+	Couple of shots @ 0 delay, another couple @ 10 millisecond delay
+	
+Results:
+	It works!
+	
+	
+Comments:
+	Not much to say except that it works!
+	Use fine-gauge wire to prevent projectile toppling

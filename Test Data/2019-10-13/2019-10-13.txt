@@ -1,0 +1,100 @@
+ALL TESTS: Cap voltage +1v/-0v, Gate +0.1v/-0v, 1 microsecond, 1 LED, ch1 Probe, ch2 Capacitor (10x)
+
+Cap 60V, Gate 8V, 
+x3
+
+Cap 65V, Gate 8V, 
+x3
+
+
+Cap 70V, Gate 8V, 
+x3 (saved #2 twice)
+
+
+Cap 75V, Gate 8V, 
+x3
+
+Cap 80V, Gate 8V, 
+x3 (saved #1 twice)
+
+Cap 85V, Gate 8V, 
+x3
+
+Cap 90V, Gate 8V, 
+x3
+
+Cap 95V, Gate 8V, 
+x3
+
+Cap 100V, Gate 8V, 
+x3
+
+Cap 110V, Gate 8V, 
+x3
+
+Cap 120V, Gate 8V, 
+x3
+
+Cap 130V, Gate 8V, 
+x3
+
+Cap 140V, Gate 8V, 
+x3
+
+Cap 150V, Gate 8V, 
+x3
+
+Cap 65V, Gate 16V, 
+x3
+
+Cap 70V, Gate 16V, 
+x3
+
+Cap 80V, Gate 16V, 
+x3
+
+Cap 90V, Gate 16V, 
+x3
+
+Cap 100V, Gate 16V, 
+x3
+
+Cap 110V, Gate 16V, 
+x3
+
+Cap 120V, Gate 16V, 
+x3
+
+Cap 130V, Gate 16V, 
+x3
+
+Cap 140V, Gate 16V, 
+x3
+
+Cap 150V, Gate 16V, 
+x3
+
+
+
+Cap 150V, Gate 16V, 
+x1 (clip removed, slight LED movement?)
+
+Cap 150V, Gate 13V, 
+x1
+
+Cap 150V, Gate 10V, 
+x1
+
+Cap 150V, Gate 8V, 
+x1
+
+Cap 150V, Gate 7V, 
+1x
+
+Cap 150V, Gate 7.5V, 
+1x
+
+Cap 150V, Gate 8V, 
+x1
+
+

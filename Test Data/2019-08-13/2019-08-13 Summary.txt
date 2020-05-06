@@ -1,0 +1,33 @@
+Goal:
+	Measure current-voltage relationship of CREE CXA2530 LED
+	This will help with design of MK2 flash (constant illumination mode)
+
+Equipment: 
+	1x Cree CXA2530 LED
+	Lab power supply
+	2x multimeters
+	
+Setup:
+	Lab power supply connected directly to LED (with one multimeter in series to measure current)
+	Second multimeter measuring voltage
+	
+Results:
+	29.9V = 0.002A = 0.06W
+	30.5V = 0.012A = 0.37W
+	31.0V = 0.030A = 0.93W
+	31.5V = 0.066A = 2.08W
+	32.0V = 0.112A = 3.58W
+	32.5V = 0.171A = 5.56W
+	33.0V = 0.245A = 8.09W
+	33.5V = 0.338A = 11.32W
+	34.0V = 0.439A = 14.93W
+	34.5V = 0.558A = 19.25W
+	34.9V = 0.662A = 23.10W
+	LED is warm but not hot
+	
+	
+Comments:
+	The datasheet indicats a maximum forward current of 1.6A.  This requires good thermal management.
+	The results seem to fit the datasheet's 105 degree C curve best, even though the LED remained fairly cool.
+	Given the assembly will be equipepd with 12 LED's, 280W of power can be delivered without major heat production.
+	A 48V 144W power supply found on Amazon can be connected directly to the LED's without fear of damaging them, but may cause premature failure of power supply.

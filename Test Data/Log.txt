@@ -1,0 +1,26 @@
+2016-09-02
+	Testing high-voltage strobing of cheap LED's
+2019-03-10
+	Testing high-voltage strobing of Bridgelux LED
+2019-03-30
+	Testing MOSFET drivers to improve gate voltage dv/dt
+2019-05-13 through 2019-05-22
+	Testing LED endurance
+2019-06-03
+	Testing LED series resistors and gate ferrite beads
+2019-06-30
+	Testing new 'tripwire' trigger
+2019-08-13
+	Testing voltage-current relationship of LED's for constant illumination
+2019-10-06
+	Testing various gate voltages
+2019-10-13
+	Testing various gate & capacitor voltages
+2019-10-14
+	Testing various gate & capacitor voltages
+2019-11-21
+	Testing high-pass filter circuit and trigger response speed
+2020-04-15
+	Testing new EMCB0 boards
+2020-04-28
+	Testing typical speedlight flash durations
