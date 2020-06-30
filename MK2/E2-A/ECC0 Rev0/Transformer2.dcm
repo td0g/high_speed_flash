@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MIC3172
+D 2.5A Synchronous Buck Regulator, Adjustable Output Voltage, SO-20W
+K Synchronous Buck Regulator adjustable
+F http://ww1.microchip.com/downloads/en/DeviceDoc/MIC2172-3172-100kHz-1.25A-Switching-Regulators-DS20006208A.pdf
+$ENDCMP
+#
+#End Doc Library
