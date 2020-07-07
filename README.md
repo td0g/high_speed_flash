@@ -2,7 +2,7 @@
 Edgerton is a high-speed flash used for photographing bullets or other projectiles.  The project is open-source.  Please see https://hackaday.io/project/165622-edgerton-a-high-speed-led-flash for more information.
 
 ## Building Your Flash
-Please download and follow the [Assembly Manual](https://github.com/td0g/high_speed_flash/raw/master/Assembly%20Manual%201.2.pdf).  This detailed manual should answer most of your questions.
+Please download and follow the [Assembly Manual](https://github.com/td0g/high_speed_flash/blob/master/MK1_Edgerton/Assembly%20Manual%201.3.pdf).  This detailed manual should answer most of your questions.
 
 The main control board can be built in several ways.  You may build it using a blank perfboard PCB (See the perfboard layout), by etching and drilling your own PCB (See the Gerber files), or by purchasing a control board from me (https://www.tindie.com/products/19592/).
 
