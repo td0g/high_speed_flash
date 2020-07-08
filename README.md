@@ -13,7 +13,7 @@ The E2 series are very similar to the MK1 Edgerton, but have been designed with 
 
 E2 Submodels:
 
-E2-A | E2-B | E2-C
+E2-A | E2-K | E2-V
 ------------ | ------------- | -------------
 Standard | High-powered 1-microsecond | Videographer
 **Plans & specs available** | In development | In development
