@@ -25,8 +25,11 @@ Standard LED Power | **Increased LED Power** | Standard LED Power
 
 ## Comparison
 
+If you are trying to decide which design to use, have a look through this comparison.  Only the E2-A submodel is compared as it is most similar to the original Edgerton.
+
 MK1 Edgerton | MK2 E2-A
 ------------ | -------------
+**Same Performance** | **Same Performance**
 **Affordable** | About 30% more expensive
 **Relatively simple to assemble** (3D printer, soldering skills, Through-Hole Components) | Slightly more difficult (Aluminum milling / drilling, better cable management required, Surface-Mount Components)
 Reliable | **Reliable PLUS**
