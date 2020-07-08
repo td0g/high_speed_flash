@@ -15,6 +15,7 @@ E2 Submodels:
 
 E2-A | E2-B | E2-C
 ------------ | ------------- | -------------
+Standard | High-powered 1-microsecond | Videographer
 **Plans & specs available** | In development | In development
  |  | **120+ Watt Constant illumination mode**
 Battery only | Battery only | Battery OR external power supply
