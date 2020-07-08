@@ -11,7 +11,7 @@ These are called a series because multiple submodels are planned.  Currently onl
 
 The E2 series are very similar to the MK1 Edgerton, but have been designed with commercial production in mind.  You can build one yourself, but some more complicated processes are involved.  Additionally, the total cost is slightly higher.  The advantage is that the E2 series is smaller, more robust, and easier to use.
 
-# Planned E2 Submodels:
+### Planned E2 Submodels:
 
 E2-A | E2-K | E2-V
 ------------ | ------------- | -------------
