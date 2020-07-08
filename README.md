@@ -16,7 +16,7 @@ E2 Submodels:
 E2-A | E2-B | E2-C
 ------------ | ------------- | -------------
 **Plans & specs available** | In development | In development
-- | - | **120+ Watt Constant illumination mode**
+ |  | **120+ Watt Constant illumination mode**
 Battery only | Battery only | Battery OR external power supply
 **0.5 - 4 microsecond strobe** | 0.5 - 1 microsecond strobe | **0.5 - 4 microsecond strobe**
 Standard LED Power | **Increased LED Power** | Standard LED Power
