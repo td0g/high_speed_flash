@@ -17,8 +17,8 @@ E2-A | E2-K | E2-V
 ------------ | ------------- | -------------
 Standard | High-powered 1-microsecond | Videographer
 **Plans & specs available** | In development | In development
- |  | **120+ Watt Constant illumination mode**
-Battery only | Battery only | Battery OR external power supply
+Strobe only | Strobe only | **120+ Watt Constant illumination mode**
+Battery only | Battery only | **Battery OR external power supply**
 **0.5 - 4 microsecond strobe** | 0.5 - 1 microsecond strobe | **0.5 - 4 microsecond strobe**
 Standard LED Power | **Increased LED Power** | Standard LED Power
 **Well-Established Safety Margin** | LED's more likely to fail | **Well-Established Safety Margin**
