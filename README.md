@@ -15,8 +15,14 @@ The E2 series are very similar to the MK1 Edgerton, but have been designed with 
 
 MK1 Edgerton | MK2 E2-A
 ------------ | -------------
-Affordable | About 30% more expensive
-Relatively simple to assemble (3D printer, soldering skills) | Slightly more difficult (Aluminum milling / drilling, better cable management required)
+**Affordable** | About 30% more expensive
+**Relatively simple to assemble** (3D printer, soldering skills, Through-Hole Components) | Slightly more difficult (Aluminum milling / drilling, better cable management required, Surface-Mount Components)
+Reliable | **Reliable PLUS**
+8x AA batteries | **4x AA batteries**
+Battery compartment difficult to access | **Easy to use battery compartment**
+Cheap display | **Attractive, intuitive display**
+Larger | **Smaller**
+Single strobes only | **Multi-strobe capable**
 
 ## Research & Testing
 The most valuable part of this project is the research and testing.  Many LED's have been destructively tested to find their limitations.  I plan to upload all of my testing data to this repository and encourage others to share any testing performed as well.
