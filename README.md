@@ -1,12 +1,22 @@
 # high_speed_flash
-Edgerton is a high-speed flash used for photographing bullets or other projectiles.  The project is open-source.  Please see https://hackaday.io/project/165622-edgerton-a-high-speed-led-flash for more information.
+This is the data repository for my microsecond strobe designs.  They are high-speed flashes used for photographing bullets or other projectiles or processes.  The entire project is open-source.
 
-## Building Your Flash
-Please download and follow the [Assembly Manual](https://github.com/td0g/high_speed_flash/blob/master/MK1_Edgerton/Assembly%20Manual%201.3.pdf).  This detailed manual should answer most of your questions.
+## MK1 - The Edgerton
 
-The main control board can be built in several ways.  You may build it using a blank perfboard PCB (See the perfboard layout), by etching and drilling your own PCB (See the Gerber files), or by purchasing a control board from me (https://www.tindie.com/products/19592/).
+The original strobe was designed to be simple to assemble and as affordable as possible.  Photographers, please be aware that some soldering skills are required.
 
-The firmware has been tested and will make setup quick and easy.  Please flash it to your microcontroller using the Arduino IDE.  Before turning on your flash, please review the User's Manual.
+## MK2 - The E2 Series
+
+These are called a series because multiple submodels are planned.  Currently only the E2-A is complete.
+
+The E2 series are very similar to the MK1 Edgerton, but have been designed with commercial production in mind.  You can build one yourself, but some more complicated processes are involved.  Additionally, the total cost is slightly higher.  The advantage is that the E2 series is smaller, more robust, and easier to use.
+
+## Comparison
+
+MK1 Edgerton | MK2 E2-A
+------------ | -------------
+Affordable | About 30% more expensive
+Relatively simple to assemble (3D printer, soldering skills) | Slightly more difficult (Aluminum milling / drilling, better cable management required)
 
 ## Research & Testing
 The most valuable part of this project is the research and testing.  Many LED's have been destructively tested to find their limitations.  I plan to upload all of my testing data to this repository and encourage others to share any testing performed as well.
