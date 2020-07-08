@@ -11,6 +11,16 @@ These are called a series because multiple submodels are planned.  Currently onl
 
 The E2 series are very similar to the MK1 Edgerton, but have been designed with commercial production in mind.  You can build one yourself, but some more complicated processes are involved.  Additionally, the total cost is slightly higher.  The advantage is that the E2 series is smaller, more robust, and easier to use.
 
+E2 Submodels:
+
+E2-A | E2-B | E2-C
+------------ | ------------- | -------------
+**Plans & specs available** | In development | In development
+- | - | **120+ Watt Constant illumination mode**
+Battery only | Battery only | Battery OR external power supply
+**0.5 - 4 microsecond strobe** | 0.5 - 1 microsecond strobe | **0.5 - 4 microsecond strobe**
+Standard LED Power | **Increased LED Power** | Standard LED Power
+
 ## Comparison
 
 MK1 Edgerton | MK2 E2-A
