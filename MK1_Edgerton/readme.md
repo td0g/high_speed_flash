@@ -11,9 +11,11 @@ The firmware has been tested and will make setup quick and easy.  Please flash i
 
 ## Files
 
-Assembly Manual - The best way to build the flash
+**Assembly Manual** - The best way to build the flash
 
-GERBER's - All the files you need to send to a board house if you want to have the control board built
+**GERBER's** - All the files you need to send to a board house if you want to have the control board built
+
+**Firmware** - In the **edgerton** folder.  Upload using the Arduino IDE.
 
 ## License
 
