@@ -3,16 +3,16 @@ Goal:
 
 Equipment: 
 	NQTRONIX Active Probe
-	BK Precision Oscilloscope
+	Siglent SDS1200-X oscilloscope
 	55-cm integrating sphere
 	Nikon SB-910
-    Nikon SB-800
-    Canon 430EX-II
-    Yongnuo YN-460 II
+	Nikon SB-800
+	Canon 430EX-II
+	Yongnuo YN-460 II
 	
 Setup:
 	3x strobes per power setting per speedlight
-    Increase power until active probe signal begins clipping, then stop immediately
+	Increase power until active probe signal begins clipping, then stop immediately
     
 Tests:
     Nikon SB-800 LO 1
