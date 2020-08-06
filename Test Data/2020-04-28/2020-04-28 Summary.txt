@@ -7,7 +7,7 @@ Equipment:
 	Integrating Sphere
 	Canon 430EX-II
 	Yongnuo YN560-II
-	Nikon SB-900
+	Nikon SB-910
 	
 Setup:
 	Install 10-stop AND 6-stop ND filter in integrating sphere sensor port (active light probe clipping without both filters.  I need to get a 2-stop filter to fill in the gap.)
