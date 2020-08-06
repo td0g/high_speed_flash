@@ -24,3 +24,5 @@
 	Testing new EMCB0 boards
 2020-04-28
 	Testing typical speedlight flash durations
+2020-08-01
+	Testing typical speedlight flash durations
