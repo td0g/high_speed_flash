@@ -1,0 +1,73 @@
+Goal:
+	Measure the T0.1 and T0.5 durations of a selection of speedlight strobes
+
+Equipment: 
+	NQTRONIX Active Probe
+	BK Precision Oscilloscope
+	55-cm integrating sphere
+	Nikon SB-910
+    Nikon SB-800
+    Canon 430EX-II
+    Yongnuo YN-460 II
+	
+Setup:
+	3x strobes per power setting per speedlight
+    Increase power until active probe signal begins clipping, then stop immediately
+    
+Tests:
+    Nikon SB-800 LO 1
+    Nikon SB-800 LO 2
+    Nikon SB-800 LO 3
+    Nikon SB-800 1/128 1
+    Nikon SB-800 1/128 2
+    Nikon SB-800 1/128 3
+    Nikon SB-800 1/64 1
+    Nikon SB-800 1/64 2
+    Nikon SB-800 1/64 3
+    Nikon SB-800 1/64 4
+    Nikon SB-800 1/32 1
+    Yongnuo YN-460 II 1/128 1
+    Yongnuo YN-460 II 1/128 2
+    Yongnuo YN-460 II 1/128 3
+    Yongnuo YN-460 II 1/64 1
+    Yongnuo YN-460 II 1/64 2
+    Yongnuo YN-460 II 1/64 3
+    Yongnuo YN-460 II 1/32 1
+    Canon 430EX-II LO 1
+    Canon 430EX-II LO 2
+    Canon 430EX-II LO 3
+    Canon 430EX-II 1/128 1
+    Canon 430EX-II 1/128 2
+    Canon 430EX-II 1/128 3
+    Canon 430EX-II 1/64 1
+    Canon 430EX-II 1/64 2
+    Canon 430EX-II 1/64 3
+    Canon 430EX-II 1/64 4
+    Canon 430EX-II 1/64 5
+    Canon 430EX-II 1/64 6
+    Canon 430EX-II 1/32 1
+    Canon 430EX-II 1/32 2
+    Canon 430EX-II 1/32 3
+    Canon 430EX-II 1/16 1
+    Nikon SB-910 LO 1
+    Nikon SB-910 LO 2
+    Nikon SB-910 LO 3
+    Nikon SB-910 1/128 1
+    Nikon SB-910 1/128 2
+    Nikon SB-910 1/128 3
+    Nikon SB-910 1/64 1
+    Nikon SB-910 1/64 2
+    Nikon SB-910 1/64 3
+    Nikon SB-910 1/32 1
+    Nikon SB-910 1/32 2
+    Nikon SB-910 1/32 3
+    Nikon SB-910 1/16 1
+    Nikon SB-910 1/16 2
+    Nikon SB-910 1/16 3
+    Nikon SB-910 1/8 1
+	
+Results:
+	Some flashes are faster than others
+    A small benefit is gained by using a Cactus V6
+    Nothing replaces a microsecond strobe!
+	
