@@ -15,17 +15,18 @@ Setup:
 	Increase power until active probe signal begins clipping, then stop immediately
     
 Tests:
-    Nikon SB-800 LO 1
-    Nikon SB-800 LO 2
-    Nikon SB-800 LO 3
-    Nikon SB-800 1/128 1
-    Nikon SB-800 1/128 2
-    Nikon SB-800 1/128 3
-    Nikon SB-800 1/64 1
-    Nikon SB-800 1/64 2
-    Nikon SB-800 1/64 3
-    Nikon SB-800 1/64 4
-    Nikon SB-800 1/32 1
+2020-08-01:
+    Nikon SB-800 LO 1   (REMOVED - checked data later and found problems)
+    Nikon SB-800 LO 2   (REMOVED - checked data later and found problems)
+    Nikon SB-800 LO 3   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/128 1   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/128 2   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/128 3   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/64 1   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/64 2   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/64 3   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/64 4   (REMOVED - checked data later and found problems)
+    Nikon SB-800 1/32 1   (REMOVED - checked data later and found problems)
     Yongnuo YN-460 II 1/128 1
     Yongnuo YN-460 II 1/128 2
     Yongnuo YN-460 II 1/128 3
@@ -62,9 +63,85 @@ Tests:
     Nikon SB-910 1/32 2
     Nikon SB-910 1/32 3
     Nikon SB-910 1/16 1
-    Nikon SB-910 1/16 2
-    Nikon SB-910 1/16 3
-    Nikon SB-910 1/8 1
+2020-08-06:
+    Nikon SB-800 1/128 1 (No Cactus)
+    Nikon SB-800 LO (Strange Setup) 1
+    Nikon SB-800 LO (Strange Setup) 2
+    Nikon SB-800 LO (Strange Setup) 3
+    Nikon SB-800 LO 1
+    Nikon SB-800 LO 2
+    Nikon SB-800 LO 3
+    Nikon SB-800 1/128 1
+    Nikon SB-800 1/128 2
+    Nikon SB-800 1/128 3
+    Nikon SB-800 1/64 1
+    Nikon SB-800 1/64 2
+    Nikon SB-800 1/64 3
+    Nikon SB-800 1/32 1
+    Nikon SB-800 1/32 2
+    Nikon SB-800 1/32 3
+    Nikon SB-800 1/16 1
+    Nikon SB-800 1/128 1 (No Cactus)
+    Nikon SB-800 1/64 1 (No Cactus)
+    Nikon SB-800 1/32 1 (No Cactus)
+    Nikon SB-800 1/16 1 (No Cactus)
+2020-08-08 (NO CACTUS):
+    Nikon SB-800 1/128 1
+    Nikon SB-800 1/128 2
+    Nikon SB-800 1/128 3
+    Nikon SB-800 1/64 1
+    Nikon SB-800 1/64 2
+    Nikon SB-800 1/64 3
+    Nikon SB-800 1/64 4
+    Nikon SB-800 1/32 1
+    Nikon SB-800 1/32 2
+    Nikon SB-800 1/32 3
+    Nikon SB-800 1/16 1
+    Nikon SB-800 1/128 105mm 1 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/128 105mm 2 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/128 105mm 3 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/64 105mm 1 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/64 105mm 2 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/64 105mm 3 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/64 105mm 4 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/32 105mm 1 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/32 105mm 2 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/32 105mm 3 (SEPARATED - Testing sensitivity to beam angle)
+    Nikon SB-800 1/16 105mm 1 (SEPARATED - Testing sensitivity to beam angle)
+    Yongnuo YN-460 II 1/128 1
+    Yongnuo YN-460 II 1/128 2
+    Yongnuo YN-460 II 1/128 3
+    Yongnuo YN-460 II 1/64 1
+    Yongnuo YN-460 II 1/64 2
+    Yongnuo YN-460 II 1/64 3
+    Yongnuo YN-460 II 1/32 1
+    Canon 430EX-II 1/64 1
+    Canon 430EX-II 1/64 2
+    Canon 430EX-II 1/64 3
+    Canon 430EX-II 1/32 1
+    Canon 430EX-II 1/32 2
+    Canon 430EX-II 1/32 3
+    Canon 430EX-II 1/16 1
+    Canon 430EX-II 1/16 2
+    Canon 430EX-II 1/16 3
+    Canon 430EX-II 1/8 1
+    Nikon SB-910 1/128 1
+    Nikon SB-910 1/128 2
+    Nikon SB-910 1/128 3
+    Nikon SB-910 1/64 1
+    Nikon SB-910 1/64 2
+    Nikon SB-910 1/64 3
+    Nikon SB-910 1/32 1
+    Nikon SB-910 1/32 2
+    Nikon SB-910 1/32 3
+    Yongnuo YN-460 II #2 1/128 1
+    Yongnuo YN-460 II #2 1/128 2
+    Yongnuo YN-460 II #2 1/128 3
+    Yongnuo YN-460 II #2 1/64 1
+    Yongnuo YN-460 II #2 1/64 2
+    Yongnuo YN-460 II #2 1/64 3
+    Yongnuo YN-460 II #2 1/32 1
+
 	
 Results:
 	Some flashes are faster than others
