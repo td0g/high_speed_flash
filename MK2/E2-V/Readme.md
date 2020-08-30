@@ -4,6 +4,6 @@ An extension of the E2-A, the E2-V has all of the same functionality but include
 
 ## ToDo
 
-Finish development of the LM3209-based LED driver
+Finish development of the LM3409-based LED driver
 
 Integrate LED driver into E2 design
