@@ -19,7 +19,11 @@ The firmware has been tested and will make setup quick and easy.  Please flash i
 
 **BOM** - Itemized list of all materials needed to manufacture the E2-A
 
-**Firmware** - Upload using the Arduino IDE.
+**Firmware** - Upload using the Arduino IDE
+
+**STL** - 3D print files
+
+**Mechanical Drawings** - Drawings for manufacturing the aluminum faceplate
 
 ## License
 
