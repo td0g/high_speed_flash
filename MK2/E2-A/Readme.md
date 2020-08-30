@@ -17,7 +17,9 @@ The firmware has been tested and will make setup quick and easy.  Please flash i
 
 **GERBER's** - All the files you need to send to a board house if you want to have the control board built
 
-**Firmware** - In the **edgerton** folder.  Upload using the Arduino IDE.
+**BOM** - Itemized list of all materials needed to manufacture the E2-A
+
+**Firmware** - Upload using the Arduino IDE.
 
 ## License
 
