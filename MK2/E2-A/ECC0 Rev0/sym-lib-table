@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name Transformer2)(type Legacy)(uri ${KIPRJMOD}/Transformer2.lib)(options "")(descr ""))
-)

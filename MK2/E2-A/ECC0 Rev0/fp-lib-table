@@ -1,5 +1,0 @@
-(fp_lib_table
-  (lib (name Flyback)(type KiCad)(uri "Z:/Tyler/006 2017-01-14 High-Speed Flash/Design/KiCAD/Flyback.pretty")(options "")(descr ""))
-  (lib (name FlybackTransformer)(type KiCad)(uri ${KIPRJMOD}/FlybackTransformer.pretty)(options "")(descr ""))
-  (lib (name FlybackTranformer)(type KiCad)(uri ${KIPRJMOD}/FlybackTransformer.pretty/FlybackTranformer.pretty)(options "")(descr ""))
-)
