@@ -35,6 +35,10 @@ Software is licensed under a [GNU GPL v3 License](https://www.gnu.org/licenses/g
 
 Finish this readme
 
-Complete and upload the assembly manual
+Assembly Manual - complete and upload
 
-Update the operator's manual
+Back_Cover.STL - redesign external trigger jack housing
+
+EMCB1 - Some components are placed too closely, will need to increase board width by a couple mm
+
+Operator's Manua - update
