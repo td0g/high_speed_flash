@@ -22,34 +22,42 @@ void forceFlash(){    //flashes after delay
     switch (flashDuration){
     case 0:
         while (micros() < _trigTime){};
+        cli();
         FLASH_ON;
         DELAY_500NS;
         FLASH_OFF;
+        sei();
     break;
     case 1:
         while (micros() < _trigTime){};
+        cli();
         FLASH_ON;
         DELAY_1US; 
         FLASH_OFF;
+        sei();
     break;
     case 2:
         while (micros() < _trigTime){};
+        cli();
         FLASH_ON;
         DELAY_2US;
         FLASH_OFF;
+        sei();
     break;
     case 3:
         while (micros() < _trigTime){};
+        cli();
         FLASH_ON;
         DELAY_4US;
         FLASH_OFF;
+        sei();
     break;
       default:
       break;
     }
   }
   FLASH_OFF;
-
+  
 //Signal flash is done with audio
   soundDone();
 
@@ -73,6 +81,9 @@ void runFlash(){
 //Get current state of PINC
   byte _pinNoTrigger;
   _pinNoTrigger = PINC;
+
+//Disable all interrupts
+  cli();
   
 //Wait for trigger (PINC state changes), then fire flash immediately if button is not pressed
   switch (flashDuration){
@@ -81,29 +92,35 @@ void runFlash(){
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_500NS;
       FLASH_OFF;
+      sei(); //Enable interrupts
   break;
   case 1:
     while (PINC == _pinNoTrigger){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_1US; 
       FLASH_OFF;
+      sei(); //Enable interrupts
   break;
   case 2:
     while (PINC == _pinNoTrigger){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_2US;
       FLASH_OFF;
+      sei(); //Enable interrupts
   break;
   case 3:
     while (PINC == _pinNoTrigger){};
       if (BUTTON_NOT_PRESSED) FLASH_ON;
       DELAY_4US;
       FLASH_OFF;
+      sei(); //Enable interrupts
   break;
   default:
      break;
   }
   FLASH_OFF;
+
+
 
 //Signal flash is done with audio
   soundDone();

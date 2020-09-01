@@ -1,9 +1,8 @@
 void recordPerformance(){ //Save flash performance to EEPROM
 //Find first record address with differing indexing bit
   byte x = (EEPROM.read(0) >> 2) & 1;
-  byte e = 0;
+  unsigned int e = 0;
   while (((EEPROM.read(e) >> 2) & 1) == x && (e + 3 < EEPROM_HISTORY_END))e += 3;
-
 //All indexing bits were identical - start at first address
   if (e + 3 >= EEPROM_HISTORY_END) {
     e = 0;

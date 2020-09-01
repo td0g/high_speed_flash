@@ -62,6 +62,10 @@ void initialSetup(){  //Check if button is held at startup, then run calibration
         for (byte i = 0; i < 8; i++) _a += analogRead(HIGH_VOLT_OUT_ANALOG);
         _a /= 8;
         _v = _a * _c;   //Calculated voltage
+        if (_v > 950){
+          _v = 950;
+          _c = _v / _a;
+        }
         if (_a > 1020) display.printInt(9999);  //Indicating that signal is clipping
         else {
           if (_e != 0){   //Encoder was turned

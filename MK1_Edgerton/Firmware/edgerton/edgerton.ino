@@ -60,6 +60,10 @@ CHANGELOG
   Documentation of all functions
   Battery voltage display bug fixed
   Removed unused variables
+
+0.2.9 2020-07-09
+  Disables interrupts prior to strobing
+  Fixed bug in Performance Recording function
 */
 
 //Basic Configuration
@@ -74,10 +78,10 @@ CHANGELOG
   #define DISPLAY_TIMEOUT 6000    //Display will darken after this milliseconds
 
 //Pulse Duration Calibration
-  #define DELAY_500NS NOP;
+  #define DELAY_500NS NOP; NOP;
   #define DELAY_1US NOP;NOP;NOP;NOP;NOP; 
-  #define DELAY_2US DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;NOP;NOP;NOP;
-  #define DELAY_4US DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;
+  #define DELAY_2US DELAY_500_NS;DELAY_500_NS;NOP;NOP;//DELAY_500_NS;
+  #define DELAY_4US DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;DELAY_500_NS;
 
 //Pin Configuration
   #define DISPLAY_CLK_PIN 3 //TM1637 Module
