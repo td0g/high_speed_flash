@@ -31,7 +31,13 @@ Documentation is licensed under a [Creative Commons Attribution 4.0 Internationa
 
 Software is licensed under a [GNU GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.txt)
 
-## ToDo
+## Roadmap
+
+### Rev 0
+
+COMPLETE
+
+### Rev 1
 
 Finish this readme
 
@@ -41,4 +47,18 @@ Back_Cover.STL - redesign external trigger jack housing
 
 EMCB1 - Some components are placed too closely, will need to increase board width by a couple mm
 
-Operator's Manua - update
+Operator's Manual - update
+
+### Rev 2
+
+Adding third PCB to design: EIP0.  This board will be mounted near the encoder and display.  It will host the 5V and 12.8V regulator.  The board will be connected to the EMCB1 control board using an FFC ribbon, which will make it easier to fit all of the components.  Battery power will be supplied to the EMCB1 by 22-gauge wires.
+
+The EMCB1 board will be updated with a 'modelling lamp' function, based on the XL6005 boost converter SMPS.  Max power is ~10W, efficiency is ~60%.
+
+The EMCB1 and ECC0 boards will be modified such that they can connect directly - no wires.  Fewer wires = fewer failure opportunities and more compact design
+
+The film capacitors will be rotated slightly to improve spacing.
+
+INVESTIGATE: Increasing maximum exposure time
+
+INVESTIGATE: Replacing TC4452 gate driver with more powerful driver
