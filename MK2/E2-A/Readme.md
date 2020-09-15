@@ -51,7 +51,7 @@ Operator's Manual - update
 
 ### Rev 2
 
-Adding third PCB to design: EIP0.  This board will be mounted near the encoder and display.  It will host the 5V and 12.8V regulator.  The board will be connected to the EMCB1 control board using an FFC ribbon, which will make it easier to fit all of the components.  Battery power will be supplied to the EMCB1 by 22-gauge wires.
+Adding third PCB to design: EIP0.  This board will be mounted near the encoder and display.  It will host the 5V and 12.8V regulator.  The 12.8V regulator will be an SX1308-based boost converter, no longer an off-the-shelf converter.  The board will be connected to the EMCB1 control board using an FFC ribbon, which will dramatically improve cable management.  Battery power will be supplied to the EMCB1 by 22-gauge wires so that the XL6005 and MIC3172 have ample current supply.
 
 The EMCB1 board will be updated with a 'modelling lamp' function, based on the XL6005 boost converter SMPS.  Max power is ~10W, efficiency is ~60%.
 
