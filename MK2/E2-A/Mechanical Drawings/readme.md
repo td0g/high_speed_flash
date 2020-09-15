@@ -1,6 +1,6 @@
 ## Files:
 
-### Faceplate
+### Face Plate
 
 Required for E2-A.  
 
