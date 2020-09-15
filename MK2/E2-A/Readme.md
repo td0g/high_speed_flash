@@ -59,6 +59,8 @@ The EMCB1 and ECC0 boards will be modified such that they can connect directly -
 
 The film capacitors will be rotated slightly to improve spacing.
 
+INVESTIGATE: Modified version to use 18650 battery(s).  1x 18650 would run the strobe, 2x could run the XL6005 boost converter at a higher power than 4x AA batteries.
+
 INVESTIGATE: Increasing maximum exposure time
 
 INVESTIGATE: Replacing TC4452 gate driver with more powerful driver
