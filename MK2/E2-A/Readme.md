@@ -59,7 +59,7 @@ The EMCB1 and ECC0 boards will be modified such that they can connect directly -
 
 The film capacitors will be rotated slightly to improve spacing.
 
-USB-C connector on case to power strobe (eg. Raspberry Pi 4 PSU).  Adding CH340 chip so that FTDI adapter isn't required for firmware updates - just use USB-C connection.
+USB-C connector on case to power strobe (eg. Raspberry Pi 4 PSU).  Adding CH340 chip so that FTDI adapter isn't required for firmware updates - just use USB-C connection.  See https://github.com/sparkfun/Serial_Basic_Breakout-CH340C
 
 INVESTIGATE: Modified version to use 18650 battery(s).  1x 18650 would run the strobe, 2x could run the XL6005 boost converter at a higher power than 4x AA batteries.
 
