@@ -27,3 +27,5 @@ Develop 48V to 6V buck regulator
 Modify firmware to support constant illumination mode
 
 Integrate LED driver into E2 design
+
+Ensure LED's are load balanced (https://www.onsemi.com/pub/Collateral/AND8109-D.PDF)
